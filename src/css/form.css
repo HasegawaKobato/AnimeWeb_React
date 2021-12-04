@@ -1,0 +1,41 @@
+.search {
+  width: 180px;
+}
+.originalPW {
+  width: 155px;
+}
+.newPW {
+  width: 155px;
+}
+.confirmNewPW {
+  width: 155px;
+}
+.name {
+  width: 70px;
+}
+.birthYear {
+  width: 40px;
+}
+.birthMonth {
+  width: 25px;
+}
+.birthDay {
+  width: 25px;
+}
+.tel {
+  width: 155px;
+}
+.address {
+  width: 65%;
+}
+.loginButton {
+  color: #000;
+}
+.account {
+  width: 175px;
+  color: #000;
+}
+.password {
+  width: 175px;
+  color: #000;
+}

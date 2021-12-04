@@ -1,0 +1,40 @@
+.menu>ul>li:hover, .menu>ul>li:hover .menuLink {
+  height: 50px;
+  color: #FFF;
+  background: #3f99ff;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.itemType>ul>li:hover {
+  color: #00F;
+}
+.item:hover .intro{
+  color: #00F;
+}
+.centerItem:hover .intro, .centerItemE:hover .intro{
+  color: #00F;
+}
+.more:hover , .moreHover:hover {
+  color: #3f99ff;
+  border-bottom: 1px #3f99ff dotted;
+}
+.link li:hover, .link li:hover .rootLink{
+  background: #f8f9ff;
+  color: #3f99ff;
+}
+.RWDlink li:hover, .RWDlink li:hover .rootLink{
+  background: #f8f9ff;
+  color: #3f99ff;
+}
+.memberService li:hover {
+  color: #555;
+}
+.sort>li:hover, .type>li:hover {
+  color: #000;
+}
+.sort>li:hover {
+  font-weight: bold;
+}
+.sort>li:hover>.dottedEffect, .type>li:hover>.dottedEffect {
+  opacity: 1;
+}

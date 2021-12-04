@@ -1,0 +1,129 @@
+@media not screen and (min-width:1146px) {
+  .memberService, .keyword, .bookInfo, .bookPrice {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width:960px) {
+
+  .header, .line, .left, .right, .ourInfo, .link, .loginLine, .loginHead, .loginImg, .colon {
+    display: none;
+  }
+  .RWDmenu, .RWDlink, .RWDsearchField {
+    display: block;
+  }
+
+  .center, .footLogo, .features, .searchField, .RWDsearchField, .bookData, .register, .memberDataField, .login {
+    width: 100%;
+  }
+  .html {
+    width: 98%;
+    padding: 1%;
+    margin: auto;
+  }
+  .center, .submit {
+    margin: 0px;
+    padding: 0px;
+  }
+  .footLogo {
+    line-height: 80px;
+  }
+  .searchField, .RWDsearchField {
+    text-align: center;
+  }
+  .search {
+    width: 40%;
+  }
+
+  .bookData {
+    border-bottom: 1px #555 dotted;
+    border-top: 1px #555 dotted;
+  }
+  .bookImg {
+    width: 50%;
+    margin: 0px 25% 20px 25%;
+  }
+  .bookInfo, .bookPrice {
+    border-bottom: 0px #555 dotted;
+    width: 50%;
+    padding: 2.5%;
+    font-size: 16px;
+  }
+  .bookInfo {
+    border-right: 1px #555 dotted;
+  }
+
+  .modify {
+    width: 96%;
+    margin: 0% 2% 100px 2%;
+    border: 0px;
+  }
+
+  .memberRoot {
+    width: 98%;
+    position: fixed;
+    bottom: 0px;
+  }
+
+  .loginWidth {
+    width: 100%;
+    padding: 0px;
+  }
+  .register {
+    padding: 0px;
+    margin-bottom: 60px;
+  }
+
+  .loginField {
+    width: 80%;
+    top: 10px;
+    left: 11%;
+    right: 9%;
+    text-align: center;
+  }
+  .account, .password {
+    width: 15%;
+  }
+
+}
+
+@media screen and (max-width:768px) {
+
+  .centerItemE {
+    display: none;
+  }
+
+  .bookInfo, .bookPrice {
+    width: 100%;
+  }
+
+  .centerItem {
+    width: 50%;
+  }
+
+  .centerItem img {
+    width: 99%;
+  }
+
+  .loginField {
+    position: relative;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    color: #000;
+  }
+
+  .register {
+    padding: 0px;
+  }
+
+  .footLogo {
+    line-height: 70px;
+  }
+
+  .bookInfo {
+    border-right: 0px #555 dotted;
+    border-bottom: 1px #555 dotted;
+  }
+
+}
