@@ -1,14 +1,15 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import '../css/scope/home.css';
 import kuzuC from '../img/kuzuC.jpg'
 import kataC from '../img/kataC.jpg'
 import konosubaC from '../img/konosubaC.jpg'
+import { DETAIL_PAGE } from '../Data/Enums';
 
-class CTTB extends React.Component<{}, { detail: string }> {
+class CTTB extends React.Component<{}, { detail: DETAIL_PAGE }> {
     constructor(props: any) {
         super(props);
         this.state = {
-            detail: 'None',
+            detail: DETAIL_PAGE.NONE,
         };
     }
 
@@ -20,22 +21,22 @@ class CTTB extends React.Component<{}, { detail: string }> {
                         <p>新番中文書</p>
                     </div>
                     <div className="more moreHover">
-                        <a onClick={() => this.setState({ detail: 'ComingTVTradBook' })}>
+                        <span onClick={() => this.setState({ detail: DETAIL_PAGE.CTTB })}>
                             <span>more...</span>
-                        </a>
+                        </span>
                     </div>
                 </div>
                 <div className="cot">
                     <div className="centerItem">
-                        <img src={kuzuC} /><br />
+                        <img alt="" src={kuzuC} /><br />
                         <span className="intro">人渣的本願 06</span>
                     </div>
                     <div className="centerItem">
-                        <img src={kataC} /><br />
+                        <img alt="" src={kataC} /><br />
                         <span className="intro">亞人醬有話要說 04</span>
                     </div>
                     <div className="centerItemE">
-                        <img src={konosubaC} /><br />
+                        <img alt="" src={konosubaC} /><br />
                         <span className="intro">為美好的世界獻上祝福 08</span>
                     </div>
                 </div>

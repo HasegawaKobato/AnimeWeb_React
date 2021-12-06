@@ -1,7 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import Menu from './components/Menu';
-import Content from './components/Content';
+import Login from './components/Login';
 
 import './css/frame.css';
 import './css/style.css';
@@ -11,16 +9,20 @@ import './css/RWD.css';
 import './css/RWDmenu.css';
 import './css/grids-responsive-min.css';
 import './css/pure-min.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
 
 class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Menu></Menu>
-        <div className="line"></div>
-        <Content></Content>
-      </div>);
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    );
   }
 }
 

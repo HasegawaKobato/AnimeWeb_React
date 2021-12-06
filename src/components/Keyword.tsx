@@ -1,33 +1,23 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import '../css/scope/home.css';
 
-const fullWidth = {
-    width: '100%'
-}
-
-class Keyword extends React.Component<{}, { detail: string }> {
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            detail: 'None',
-        };
-    }
+class Keyword extends React.Component {
 
     render() {
         return (
             <div className="Column interval">
                 <p>熱門關鍵字</p>
                 <ul className="keyword">
-                    <li><a href="#">你的名字</a></li>
-                    <li><a href="#">1月新番</a></li>
-                    <li><a href="#">進擊的巨人</a></li>
-                    <li><a href="#">聲之形</a></li>
-                    <li><a href="#">RE</a></li>
-                    <li><a href="#">從零開始的異世界生活</a></li>
-                    <li><a href="#">雷姆</a></li>
-                    <li><a href="#">拉姆</a></li>
-                    <li><a href="#">伊澤塔</a></li>
-                    <li><a href="#">芬涅</a></li>
+                    <li><span>你的名字</span></li>
+                    <li><span>1月新番</span></li>
+                    <li><span>進擊的巨人</span></li>
+                    <li><span>聲之形</span></li>
+                    <li><span>RE</span></li>
+                    <li><span>從零開始的異世界生活</span></li>
+                    <li><span>雷姆</span></li>
+                    <li><span>拉姆</span></li>
+                    <li><span>伊澤塔</span></li>
+                    <li><span>芬涅</span></li>
                 </ul>
             </div>
         );

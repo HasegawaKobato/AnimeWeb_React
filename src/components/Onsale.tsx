@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import '../css/scope/home.css';
 import kiminonawaC from '../img/kiminonawaC.jpg';
 
-class Onsale extends React.Component<{}, { detail: string }> {
+class Onsale extends React.Component {
 
     render() {
         return (
@@ -10,7 +10,7 @@ class Onsale extends React.Component<{}, { detail: string }> {
                 <p>特價區</p>
 
                 <div className="item">
-                    <img src={kiminonawaC} /><br />
+                    <img alt="" src={kiminonawaC} /><br />
                     <span className="intro">你的名字</span>
                 </div>
             </div>

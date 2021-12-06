@@ -1,15 +1,37 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import '../css/scope/home.css';
+import { PAGE_TYPE } from '../Data/Enums';
 import Base from './Base';
+import search from '../img/search.png';
+
+const SEARCH = {
+    'width': '15px'
+};
+
+const FOOTTITLE: React.CSSProperties = {
+    textAlign: 'center',
+    fontSize: '12px'
+};
 
 
-class Content extends React.Component<{}, {type: string}> {
+class Content extends React.Component<{}, { type: PAGE_TYPE }> {
 
     constructor(props: any) {
         super(props);
         this.state = {
-            type: 'None',
+            type: PAGE_TYPE.NONE,
         };
+    }
+
+    private isLogin(): boolean {
+        let loginData = document.cookie.split(';').filter(d => d.includes('data'));
+        if (loginData.length) {
+            let data = window.atob(loginData[0].split('=')[1]);
+            let isLogin: boolean = JSON.parse(data).isLogin;
+            return isLogin;
+        } else {
+            return false;
+        }
     }
 
     render() {
@@ -18,20 +40,21 @@ class Content extends React.Component<{}, {type: string}> {
                 <div className="header">
                     <div className="menu">
                         <ul>
-                            <li className="menuItem1"><a className="menuLink">首頁<br />Home</a></li>
-                            <li className="menuItem2"><a className="menuLink">登入<br />Login</a></li>
-                            <li className="menuItem2"><a className="menuLink">會員專區<br />Member Only</a></li>
-                            <li className="menuItem2"><a className="menuLink">客服中心<br />Customer Service</a></li>
-                            <li className="menuItem3"><a className="menuLink">討論區<br />Forum</a></li>
+                            <li className="menuItem1" onClick={() => { window.location.href = "" }}><span className="menuLink">首頁<br />Home</span></li>
+                            {this.isLogin() ? <li className="menuItem2"><span className="menuLink">登出<br />Logout</span></li> :
+                                <li className="menuItem2"><span className="menuLink">登入<br />Login</span></li>}
+                            <li className="menuItem2"><span className="menuLink">會員專區<br />Member Only</span></li>
+                            <li className="menuItem2"><span className="menuLink">客服中心<br />Customer Service</span></li>
+                            <li className="menuItem3"><span className="menuLink">討論區<br />Forum</span></li>
                         </ul>
                     </div>
                     <div className="logoArea">
                         <div className="headerLogo">
-                            <a className="home">Anime</a>
+                            <span className="home">Anime</span>
                         </div>
                         <div className="headerNear">
                             <div className="searchField">
-                                {/* <img src="assets/img/search.png" style="width:15px;"><input type ="text" name="search" className ="search"> */}
+                                <img alt="" src={search} style={SEARCH} /><input type="text" name="search" className="search" />
                                 <select>
                                     <option>中文書</option>
                                     <option>日文書</option>
@@ -42,53 +65,53 @@ class Content extends React.Component<{}, {type: string}> {
                                     <option>海報</option>
                                     <option>其他周邊</option>
                                 </select>
-                                {/* <input type ="button" value="搜尋"> */}
+                                <input type="button" value="搜尋" />
                             </div>
                         </div>
                     </div>
                     <div className="itemType">
                         <ul>
-                            <li onClick={() => this.setState({ type: 'TraditionalBook' })}>中文書</li>
-                            <li onClick={() => this.setState({ type: 'JapaneseBook' })}>日文書</li>
-                            <li onClick={() => this.setState({ type: 'Album' })}>畫冊</li>
-                            <li onClick={() => this.setState({ type: 'DVD' })}>ＤＶＤ</li>
-                            <li onClick={() => this.setState({ type: 'CD' })}>ＣＤ</li>
-                            <li onClick={() => this.setState({ type: 'Model' })}>模型</li>
-                            <li onClick={() => this.setState({ type: 'Poster' })}>海報</li>
-                            <li onClick={() => this.setState({ type: 'Merchandise' })}>其他周邊</li>
+                            <li onClick={() => this.setState({ type: PAGE_TYPE.TRANDITIONBOOK })}>中文書</li>
+                            <li onClick={() => this.setState({ type: PAGE_TYPE.JAPANESEBOOK })}>日文書</li>
+                            <li onClick={() => this.setState({ type: PAGE_TYPE.ALNUM })}>畫冊</li>
+                            <li onClick={() => this.setState({ type: PAGE_TYPE.DVD })}>ＤＶＤ</li>
+                            <li onClick={() => this.setState({ type: PAGE_TYPE.CD })}>ＣＤ</li>
+                            <li onClick={() => this.setState({ type: PAGE_TYPE.MODEL })}>模型</li>
+                            <li onClick={() => this.setState({ type: PAGE_TYPE.POSTER })}>海報</li>
+                            <li onClick={() => this.setState({ type: PAGE_TYPE.MERCHANDISE })}>其他周邊</li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="body">
-                    {this.state.type === 'None' && <Base></Base>}
-                    {this.state.type === 'TraditionalBook' && <p>trad-book works!</p>}
-                    {this.state.type === 'JapaneseBook' && <p>japan-book works!</p>}
-                    {this.state.type === 'Album' && <p>Album works!</p>}
-                    {this.state.type === 'DVD' && <p>DVD works!</p>}
-                    {this.state.type === 'CD' && <p>CD works!</p>}
-                    {this.state.type === 'Model' && <p>Model works!</p>}
-                    {this.state.type === 'Poster' && <p>Poster works!</p>}
-                    {this.state.type === 'Merchandise' && <p>Merchandise works!</p>}
+                    {this.state.type === PAGE_TYPE.NONE && <Base></Base>}
+                    {this.state.type === PAGE_TYPE.TRANDITIONBOOK && <p>trad-book works!</p>}
+                    {this.state.type === PAGE_TYPE.JAPANESEBOOK && <p>japan-book works!</p>}
+                    {this.state.type === PAGE_TYPE.ALNUM && <p>Album works!</p>}
+                    {this.state.type === PAGE_TYPE.DVD && <p>DVD works!</p>}
+                    {this.state.type === PAGE_TYPE.CD && <p>CD works!</p>}
+                    {this.state.type === PAGE_TYPE.MODEL && <p>Model works!</p>}
+                    {this.state.type === PAGE_TYPE.POSTER && <p>Poster works!</p>}
+                    {this.state.type === PAGE_TYPE.MERCHANDISE && <p>Merchandise works!</p>}
                 </div>
                 <div className="root">
                     <div className="footLogo">
-                        <a className="home">Anime</a>
+                        <span className="home">Anime</span>
                     </div>
                     <div className="features">
                         <div className="link">
                             <ul>
-                                <li><a className="rootLink">首頁</a></li>
+                                <li><span className="rootLink">首頁</span></li>
                                 <li>關於</li>
-                                <li><a className="rootLink">客服中心</a></li>
-                                <li><a className="rootLink">討論區</a></li>
+                                <li><span className="rootLink">客服中心</span></li>
+                                <li><span className="rootLink">討論區</span></li>
                             </ul>
                         </div>
                         <div className="RWDlink">
                             <ul>
                                 <li>關於</li>
-                                <li><a className="rootLink">客服中心</a></li>
-                                <li><a className="rootLink">討論區</a></li>
+                                <li><span className="rootLink">客服中心</span></li>
+                                <li><span className="rootLink">討論區</span></li>
                             </ul>
                         </div>
                         <div className="ourInfo">
@@ -96,7 +119,7 @@ class Content extends React.Component<{}, {type: string}> {
                             <p>地址：台北市中正區濟南路一段321號</p><br />
                         </div>
                     </div>
-                    {/* <p style="text-align:center;font-size:12px;">動漫周邊購物網　&copy;Anime Shopping site.</p> */}
+                    <p style={FOOTTITLE}>動漫周邊購物網　&copy;Anime Shopping site.</p>
                 </div>
             </div>)
     }

@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import React from 'react';
 import '../css/scope/home.css';
 import kiminonawaJ from '../img/kiminonawaJ.jpg';
 
-class Popular extends React.Component<{}, { detail: string }> {
+class Popular extends React.Component {
 
     render() {
         return (
@@ -10,7 +10,7 @@ class Popular extends React.Component<{}, { detail: string }> {
                 <p>熱門排行</p>
 
                 <div className="item">
-                    <img src={kiminonawaJ} /><br />
+                    <img alt="" src={kiminonawaJ} /><br />
                     <span className="intro">君の名は</span>
                 </div>
             </div>

@@ -7,7 +7,11 @@ import New from './New';
 import Onsale from './Onsale';
 import Popular from './Popular';
 import Zone from './Zone';
+import search from '../img/search.png';
 
+const SEARCH = {
+    'width': '15px'
+}
 
 class Base extends React.Component {
 
@@ -29,7 +33,7 @@ class Base extends React.Component {
 
 
                     <div className="RWDsearchField">
-                        {/* <img src="assets/img/search.png" style="width:15px;"><input type ="text" name="search" className ="search"> */}
+                        <img alt="" src={search} style={SEARCH} /><input type="text" name="search" className="search" />
                         <select>
                             <option>中文書</option>
                             <option>日文書</option>
@@ -40,7 +44,7 @@ class Base extends React.Component {
                             <option>海報</option>
                             <option>其他周邊</option>
                         </select>
-                        {/* <input type ="button" value="搜尋"> */}
+                        <input type="button" value="搜尋" />
                     </div>
 
                     <New></New>

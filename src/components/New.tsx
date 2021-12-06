@@ -26,7 +26,7 @@ class New extends React.Component {
                         <p>新品上市</p>
                     </div>
                     <div className="more moreHover">
-                        {/* <a (click)="changeToDetailType(detailType.New)"><span>more...</span></a> */}
+                        {/* <span (click)="changeToDetailType(detailType.New)"><span>more...</span></a> */}
                     </div>
                 </div>
                 <div className="cot">
@@ -41,17 +41,17 @@ class New extends React.Component {
         let ele: ReactElement[] = [];
         newProduct.forEach(async (item, i) => {
             ele.push(
-                <a key={i}>
+                <span key={i}>
                     {i < 2 && <div className="centerItem">
-                        {/* <img src={require(item.img)}><br /> */}
+                        {/* <img alt="" src={require(item.img)}><br /> */}
                         <span className="intro">{item.title}</span>
                     </div>}
                     {i >= 2 && <div className="centerItemE">
-                        {/* <img src={ require(item.img)}/><br /> */}
-                        {/* <img src={require(item.img)} /><br /> */}
+                        {/* <img alt="" src={ require(item.img)}/><br /> */}
+                        {/* <img alt="" src={require(item.img)} /><br /> */}
                         <span className="intro">{item.title}</span>
                     </div>}
-                </a>)
+                </span>)
         })
         return (ele);
     }
